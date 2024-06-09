@@ -1,0 +1,465 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding-top: 60px;
+    line-height: 24px;
+    font-family: "Noto Sans", sans-serif;
+  }
+  
+  .header {
+    border-bottom: 1px solid #F1F1F1;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+  }
+  .header-inner{
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  @media(max-width:992px){
+    .header-inner{
+      justify-content: space-between;
+    }
+  }
+  .header-wrap {
+    max-width: 1296px;
+    margin: 0 auto;
+  }
+  @media(max-width:1295px){
+    .header-wrap {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  .header-logo {
+    margin-right: 318px;
+  }
+  @media(max-width:992px){
+    .header-logo {
+      margin-right: 0px;
+    }
+  }
+  
+  .header-menu {
+    display: flex;
+    gap: 40px;
+  }
+  .header-menu .header-menu-click a{
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    padding: 4px 8px;
+    position: relative;
+  }
+  .header-menu .header-menu-click a:hover {
+    font-weight: 600;
+  }
+    
+  .header-menu .header-menu-click a::before,
+  .header-menu .header-menu-click a::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #919191;
+    opacity: 0;
+    -webkit-box-reflect: below 16px;
+  }
+    
+  .header-menu .header-menu-click a::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+    
+  .header-menu .header-menu-click a::after {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+    
+  .header-menu .header-menu-click a:hover::before,
+  .header-menu .header-menu-click a:hover::after {
+    opacity: 1;
+  }
+  .menu-btn {
+    display: none;
+    cursor: pointer;
+  }
+  .menu-btn .menu-icon {
+    display: none;
+  }
+  .menu-control:checked + .menu-btn .open {
+    display: none;
+  }
+  .menu-control:checked + .menu-btn .close {
+    display: inline;
+  }
+  .menu-control:not(:checked) + .menu-btn .open {
+    display: inline;
+  }
+  .menu-control:not(:checked) + .menu-btn .close {
+    display: none;
+  }
+  .menu-control {
+    display: none;
+  }
+  
+  @media(max-width:992px) {
+    .menu-btn {
+      display: block;
+    }
+    .header-menu {
+      display: none;
+    }
+    .menu-control:checked ~ .header-menu {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+    
+  
+  
+  
+  
+  .banner-section {
+    padding: 80px 0 80px 0;
+    height: 460px;
+    background-color: #FAFAFA;
+  }
+  .banner-slogan-box {
+    max-width: 670px;
+    max-height: 192px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  .banner-slogan-box div {
+    font-size: 24px;
+    line-height: 29px;
+    color: #1E1E1E;
+    text-align: center;
+    max-width: 552px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transform: translate(71px, -13px);
+  }
+  .underLight {
+    background: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/mark.png?raw=true);
+    background-repeat: no-repeat;
+    background-position: bottom 1px right 0px;
+    padding-right: 16px;
+  }
+  .underLight-1 {
+    background: none;
+  }
+  .banner-slogan-box img:last-child {
+    transform: translate(598px, -26px);
+  }
+  
+  .banner-tag {
+    max-width: 636px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .banner-tag div {
+    max-width: 298px;
+  }
+  .banner-tag-s {
+    color: #5B5B5B;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner-tag-s::after {
+    content: "";
+    display: block;
+    width: 24px;
+    border-bottom: 2px solid #c1c1c1;
+  }
+  .banner-tag-text {
+    color: #3B3B3B;
+  }
+  
+  
+  @media(max-width:767px) {
+    .banner-section {
+      height: 530px;
+    }
+    .banner-slogan-box {
+      margin-bottom: 40px;
+      align-items: center;
+    }
+    .banner-slogan-box div {
+      font-size: 20px;
+      line-height: 30px;
+      transform: none;
+    }
+    .underLight {
+      background: none;
+      padding: 0;
+    }
+    .underLight-1 {
+      background: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/mark.png?raw=true);
+      background-repeat: no-repeat;
+      background-position: bottom 2px right 0px;
+      background-size: contain;
+      padding-right: 6px;
+    }
+    .banner-slogan-box img:last-child {
+      display: none;
+    }
+  
+    .banner-tag {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
+  }
+  
+  
+  @media(max-width:375px) {
+    .banner-section {
+      padding: 40px 0 80px 0;
+      height: 540px;
+    }
+    .banner-slogan-box p:first-child {
+      max-width: 300px;
+    }
+    .banner-slogan-box p:last-child {
+      max-width: 260px;
+    }
+  }
+  
+  .content {
+    max-width: 1296px;
+    margin: 0 auto;
+    padding: 120px 0 0 0;
+  }
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 80px;
+    margin-bottom: 72px;
+  }
+  .content-items {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+  }
+  .content-image {
+    border-radius: 8px;
+    outline: 1px solid #f1f1f1;
+    margin-bottom: 16px;
+  }
+  .content-text {
+    margin-bottom: 24px;
+  }
+  .content-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33.6px;
+    color: #3B3B3B;
+  }
+  .content-intro {
+    color: #919191;
+  }
+  .content-tag {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+  .content-tag-text {
+    color: #3B3B3B;
+    background-color: #F1F1F1;
+    border-radius: 16px;
+    padding: 4px 12px;
+    display: block;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 120px;
+  }
+  .pagination a {
+    font-size: 24px;
+    line-height: 36px;
+    display: block;
+    text-decoration: none;
+    padding: 2px 13px 2px 13px;
+    border-radius: 4px;
+    color: #3B3B3B;
+  }
+  .pagination a:hover {
+    background: #3B3B3B;
+    color: #FFFFFF;
+  }
+  @media(max-width:992px) {
+    .content {
+      padding: 160px 12px;
+    }
+    .content-container {
+      row-gap: 48px;
+      margin-bottom: 48px;
+    }
+    .content-items {
+      width: 100%;
+    }
+  }
+  
+  .footer-container{
+    max-width: 1296px;
+    margin: 0 auto;
+  }
+  @media(max-width:1295px){
+    .footer-container{
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  .footer {
+    background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/footer-bg-lg.png?raw=true");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  @media(max-width:767px) {
+    .footer {
+      background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/footer-bg-sm.png?raw=true")
+    }
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    align-items: center;
+  }
+  .footer-contact p {
+    font-size: 20px;
+    line-height: 30px;
+    color: #3B3B3B;
+    margin-bottom: 24px;
+  }
+  .footer-contact h2 {
+    margin-bottom: 24px;
+  }
+  .footer-contact span {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 119px;
+  }
+  .footer-contact span a {
+    color: #919191;
+    text-decoration: none;
+  }
+  @media(max-width:767px) {
+    .footer-inner {
+      flex-direction: column;
+    }
+    .footer-contact {
+    text-align: center;
+    margin-bottom: 60px;
+    }
+  }
+  .footer-social a {
+    border: 1px solid #C1C1C1;
+    width: 306px;
+    background: #FFFFFF;
+    padding: 8px 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: block;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #3B3B3B;
+    text-decoration: none;
+  }
+  .footer-social img {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  .footer-social-item:hover {
+    background: #000000;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+    
